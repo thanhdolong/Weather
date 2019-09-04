@@ -1,0 +1,21 @@
+## OSX
+.DS_Store
+
+## Build generated
+build/
+DerivedData/
+xcuserdata/
+
+# CocoaPods
+Pods/
+
+# fastlane
+fastlane/report.xml
+fastlane/screenshots
+fastlane/metadata
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.resolved
