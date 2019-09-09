@@ -2,6 +2,8 @@
 //  Copyright © 2019 Thành Đỗ Long. All rights reserved.
 //
 
+import UIKit
+
 public protocol Coordinator: class {
     
     var children: [Coordinator] { get set }
