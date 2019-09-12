@@ -18,6 +18,10 @@ public class TodayWeatherViewModel {
         self.weather = weather
     }
     
+    public var description: String {
+        return "meh"
+    }
+    
     public var weatherIcon: UIImage? {
         return UIImage(named: weather.icon)
     }

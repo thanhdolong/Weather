@@ -9,10 +9,10 @@
 import UIKit
 import Swinject
 
-public class TabBarDelegateRouter: NSObject, Router {
+public class TabBarRouter: NSObject, Router {
     // MARK: - Instance Properties
     public let window: UIWindow
-    private let tabBarController = UITabBarController()
+    public let tabBarController = UITabBarController()
     private let theme: ThemeStrategy
     
     // MARK: - Object Lifecycle

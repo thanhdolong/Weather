@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     public lazy var appDependency = AppDependency()
-    public lazy var tabBarRouter = TabBarDelegateRouter(window: window!)
+    public lazy var tabBarRouter = TabBarRouter(window: window!)
     public lazy var forecastCoordinator = ForecastCoordinator(router: tabBarRouter, container: appDependency.container)
     public lazy var homeCoordinator = TodayCoordinator(router: tabBarRouter, container: appDependency.container)
 

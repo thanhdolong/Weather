@@ -10,6 +10,7 @@ import UIKit
 import Swinject
 
 class TodayCoordinator: Coordinator {
+    public var rootViewController: TodayViewController?
     public var container: Container
     public var children: [Coordinator] = []
     public let router: Router
@@ -22,7 +23,17 @@ class TodayCoordinator: Coordinator {
     
     func present(animated: Bool, onDismissed: (() -> Void)?) {
         let viewController = container.resolve(TodayViewController.self)!
+        viewController.delegate = self
         viewController.tabBarItem = UITabBarItem(title: "Today", image: UIImage(named: "today"), selectedImage: UIImage(named: "today"))
+        rootViewController = viewController
         router.present(viewController, animated: animated, onDismissed: onDismissed)
+    }
+}
+
+extension TodayCoordinator: TodayViewControllerDelegate {
+    func didShareButtonTapped(text description: String) {
+        let activityViewController = UIActivityViewController(activityItems: [description] , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = rootViewController?.view
+        rootViewController?.present(activityViewController, animated: true, completion: nil)
     }
 }

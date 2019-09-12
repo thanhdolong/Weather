@@ -10,9 +10,15 @@ import UIKit
 import PromiseKit
 import CoreLocation
 
+protocol TodayViewControllerDelegate: class {
+    func didShareButtonTapped(text description: String)
+}
+
 class TodayViewController: UIViewController {
     private let weatherService: WeatherService
     private let locationService: LocationService
+    
+    weak var delegate: TodayViewControllerDelegate?
     
     var indicator: UIView?
     var placemark: CLPlacemark?
@@ -35,9 +41,12 @@ class TodayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         indicator = showActivityIndicatory(onView: self.view)
         requestCurrentLocation()
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        delegate?.didShareButtonTapped(text: viewModel?.description ?? "")
     }
     
     private func requestCurrentLocation() {
