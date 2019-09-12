@@ -14,6 +14,7 @@ class TodayViewController: UIViewController {
     private let weatherService: WeatherService
     private let locationService: LocationService
     
+    var indicator: UIView?
     var placemark: CLPlacemark?
     var viewModel: TodayWeatherViewModel?
     
@@ -34,6 +35,8 @@ class TodayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        indicator = showActivityIndicatory(onView: self.view)
         requestCurrentLocation()
     }
     
@@ -41,6 +44,9 @@ class TodayViewController: UIViewController {
         locationService.getLocation().done { location in
             self.placemark = location
             self.requestWeather(for: location)
+        }.ensure {
+            guard let indicator = self.indicator else { return }
+            self.removeIndicator(indicator: indicator)
         }.catch { (error) in
             switch error {
             case is CLError where (error as? CLError)?.code == .denied:
@@ -66,7 +72,10 @@ class TodayViewController: UIViewController {
         weatherService.getCurrentWeatherForecast(location: location).done { (weather) in
             self.viewModel = TodayWeatherViewModel(place: self.placemark!, weather: weather)
             self.viewModel?.configure(self.todayView)
-            }.catch { (error) in
+        }.ensure {
+            guard let indicator = self.indicator else { return }
+            self.removeIndicator(indicator: indicator)
+        }.catch { (error) in
                 print("nie")
                 print(error)
                 print("-----")

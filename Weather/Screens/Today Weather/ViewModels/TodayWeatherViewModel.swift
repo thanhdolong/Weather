@@ -51,8 +51,13 @@ public class TodayWeatherViewModel {
     }
     
     public var windDirection: String {
+        // https://stackoverflow.com/a/48119496
         guard let windDirection = weather.wind.deg else { return "---"}
-        return "\(windDirection)"
+        if windDirection <= 0, windDirection >= 360 { return "---"}
+
+        let directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+        let index = Int((windDirection + 22.5) / 45.0) & 7
+        return directions[index]
     }
 }
 

@@ -20,16 +20,22 @@ extension UIViewController {
 
 // MARK: Display indicator Extensions
 extension UIViewController {
-    func displayIndicator(onView: UIView, offset: CGFloat = 0) -> UIView {
+    func showActivityIndicatory(onView: UIView, offset: CGFloat = 0) -> UIView {
+        
+        let boxView = UIView(frame: CGRect(x: (view.center.x - 40), y: (view.center.y - 40) + offset, width: 80, height: 80))
+        boxView.backgroundColor = UIColor.gray
+        boxView.layer.cornerRadius = 10
+        
         
         let spinnerView = UIView.init(frame: onView.bounds)
         spinnerView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
         
-        let activityIndicator = UIActivityIndicatorView.init(style: .gray)
+        let activityIndicator = UIActivityIndicatorView.init(style: .whiteLarge)
         activityIndicator.startAnimating()
         activityIndicator.center = CGPoint(x: view.center.x, y: view.center.y + offset)
         
         DispatchQueue.main.async {
+            spinnerView.addSubview(boxView)
             spinnerView.addSubview(activityIndicator)
             onView.addSubview(spinnerView)
         }

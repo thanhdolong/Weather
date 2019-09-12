@@ -24,12 +24,14 @@ public class ForecastView: UIView {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.sectionHeaderHeight = 45
+            tableView.tableFooterView = UIView()
         }
     }
 }
 
 extension ForecastView: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
         view.tintColor = .white
 
         

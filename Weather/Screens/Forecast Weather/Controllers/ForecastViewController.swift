@@ -11,10 +11,20 @@ import PromiseKit
 import CoreLocation
 
 final class ForecastViewController: UIViewController {
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(refresh(_:)),
+                                 for: UIControl.Event.valueChanged)
+
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Weather")
+        return refreshControl
+    }()
     
     private let weatherService: WeatherService
     private let locationService: LocationService
     
+    var indicator: UIView?
     var placemark: CLPlacemark?
     var viewModel: ForecastViewModel?
     
@@ -38,9 +48,16 @@ final class ForecastViewController: UIViewController {
         super.viewDidLoad()
         forecastView.tableView.dataSource = self
         forecastView.tableView.delegate = forecastView
+        forecastView.tableView.addSubview(refreshControl)
         
         registerCellForReuse()
+        
+        indicator = showActivityIndicatory(onView: self.view)
         requestCurrentLocation()
+    }
+    
+    @objc func refresh(_ sender: UIRefreshControl) {
+        self.requestCurrentLocation()
     }
     
     private func registerCellForReuse() {
@@ -51,6 +68,9 @@ final class ForecastViewController: UIViewController {
         locationService.getLocation().done { location in
             self.placemark = location
             self.requestWeather(for: location)
+        }.ensure {
+            guard let indicator = self.indicator else { return }
+            self.removeIndicator(indicator: indicator)
         }.catch { (error) in
             switch error {
             case is CLError where (error as? CLError)?.code == .denied:
@@ -77,6 +97,11 @@ final class ForecastViewController: UIViewController {
             self.viewModel = ForecastViewModel(place: self.placemark!, forecast: weathers)
             self.viewModel?.configureTitleForNavigationBar(self.forecastView)
             self.forecastView.tableView.reloadData()
+            }.ensure {
+                self.refreshControl.endRefreshing()
+                
+                guard let indicator = self.indicator else { return }
+                self.removeIndicator(indicator: indicator)
             }.catch { (error) in
                 print("nie")
                 print(error)
