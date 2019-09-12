@@ -1,8 +1,8 @@
 //
-//  ForecastViewController.swift
+//  TodayViewController.swift
 //  Weather
 //
-//  Created by Thành Đỗ Long on 02/09/2019.
+//  Created by Thành Đỗ Long on 11/09/2019.
 //  Copyright © 2019 Thành Đỗ Long. All rights reserved.
 //
 
@@ -10,23 +10,21 @@ import UIKit
 import PromiseKit
 import CoreLocation
 
-final class ForecastViewController: UIViewController {
-    
+class TodayViewController: UIViewController {
     private let weatherService: WeatherService
     private let locationService: LocationService
     
     var placemark: CLPlacemark?
-    var viewModel: ForecastViewModel?
+    var viewModel: TodayWeatherViewModel?
     
-    var forecastView: ForecastView! {
+    var todayView: TodayView! {
         guard isViewLoaded else { return nil }
-        return (view as! ForecastView)
+        return (view as! TodayView)
     }
     
     init(locationService: LocationService, weatherService: WeatherService) {
         self.locationService = locationService
         self.weatherService = weatherService
-        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,8 +34,6 @@ final class ForecastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        forecastView.tableView.dataSource = self
-
         requestCurrentLocation()
     }
     
@@ -67,9 +63,9 @@ final class ForecastViewController: UIViewController {
     }
     
     private func requestWeather(for location: CLPlacemark) {
-        weatherService.getWeeklyWeatherForecast(location: location).done { (weathers) in
-            self.viewModel = ForecastViewModel(place: self.placemark!, forecast: weathers)
-            self.forecastView.tableView.reloadData()
+        weatherService.getCurrentWeatherForecast(location: location).done { (weather) in
+            self.viewModel = TodayWeatherViewModel(place: self.placemark!, weather: weather)
+            self.viewModel?.configure(self.todayView)
             }.catch { (error) in
                 print("nie")
                 print(error)
@@ -79,27 +75,3 @@ final class ForecastViewController: UIViewController {
     }
 }
 
-extension ForecastViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel?.numberOfSections ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.numberOfRowsInSection(section) ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel?.titleForHeaderInSection(section)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel?.loremIpsum(indexPath)
-        
-        return cell
-
-    }
-    
-    
-}

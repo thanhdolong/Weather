@@ -7,21 +7,31 @@
 //
 
 import UIKit
+import Swinject
 
 public class TabBarDelegateRouter: NSObject, Router {
     // MARK: - Instance Properties
     public let window: UIWindow
     private let tabBarController = UITabBarController()
+    private let theme: ThemeStrategy
     
     // MARK: - Object Lifecycle
-    public init(window: UIWindow) {
+    init(window: UIWindow, theme: ThemeStrategy = DefaultTheme()) {
         self.window = window
+        self.theme = theme
         super.init()
         
-        tabBarController.delegate = self
+        setAppearance()
         
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()
+    }
+    
+    private func setAppearance() {
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: DefaultTheme().fonts.tapBarFont], for: .normal)
+        
+        tabBarController.tabBar.tintColor = theme.colours.secondaryTextColor
+        tabBarController.tabBar.unselectedItemTintColor = theme.colours.primaryTextColor
     }
     
     // MARK: - Router
@@ -38,6 +48,3 @@ public class TabBarDelegateRouter: NSObject, Router {
     }
 }
 
-extension TabBarDelegateRouter: UITabBarControllerDelegate {
-    
-}

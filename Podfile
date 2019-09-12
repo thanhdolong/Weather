@@ -6,8 +6,11 @@ target 'Weather' do
   use_frameworks!
 
   # Pods for Weather
-  pod 'Alamofire', '~> 5.0.0-rc.1'
-  pod 'RealmSwift'
+  pod 'Swinject', '~> 2.7'
+  pod 'Alamofire', '~> 5.0.0-rc.2'
+  pod 'RealmSwift', '~> 3.17'
+  pod "PromiseKit", "~> 6.11"
+  pod "PromiseKit/CoreLocation", "~> 6.11"
 
   target 'WeatherTests' do
     inherit! :search_paths

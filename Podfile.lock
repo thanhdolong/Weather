@@ -1,26 +1,45 @@
 PODS:
-  - Alamofire (5.0.0-rc.1)
+  - Alamofire (5.0.0-rc.2)
+  - PromiseKit (6.11.0):
+    - PromiseKit/CorePromise (= 6.11.0)
+    - PromiseKit/Foundation (= 6.11.0)
+    - PromiseKit/UIKit (= 6.11.0)
+  - PromiseKit/CoreLocation (6.11.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (6.11.0)
+  - PromiseKit/Foundation (6.11.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.11.0):
+    - PromiseKit/CorePromise
   - Realm (3.17.3):
     - Realm/Headers (= 3.17.3)
   - Realm/Headers (3.17.3)
   - RealmSwift (3.17.3):
     - Realm (= 3.17.3)
+  - Swinject (2.7.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.0.0-rc.1)
-  - RealmSwift
+  - Alamofire (~> 5.0.0-rc.2)
+  - PromiseKit (~> 6.11)
+  - PromiseKit/CoreLocation (~> 6.11)
+  - RealmSwift (~> 3.17)
+  - Swinject (~> 2.7)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - PromiseKit
     - Realm
     - RealmSwift
+    - Swinject
 
 SPEC CHECKSUMS:
-  Alamofire: b752289c6040d77e9738610c9080276f18276842
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
   RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: 0334b4d1e9b2f1ccfde35cacec0d6f4cab8f4d2a
+PODFILE CHECKSUM: a1385a9dbb180b49cea21dd0b503054550c72cc2
 
 COCOAPODS: 1.6.1

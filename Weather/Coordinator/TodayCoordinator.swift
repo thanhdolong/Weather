@@ -7,19 +7,22 @@
 //
 
 import UIKit
+import Swinject
 
-class HomeCoordinator: Coordinator {
+class TodayCoordinator: Coordinator {
+    public var container: Container
     public var children: [Coordinator] = []
     public let router: Router
     
     // MARK: - Object Lifecycle
-    public init(router: Router) {
+    public init(router: Router, container: Container) {
         self.router = router
+        self.container = container
     }
     
     func present(animated: Bool, onDismissed: (() -> Void)?) {
-        let viewController = ForecastViewController()
-        viewController.tabBarItem = UITabBarItem(title: "Today", image: nil, selectedImage: nil)
+        let viewController = container.resolve(TodayViewController.self)!
+        viewController.tabBarItem = UITabBarItem(title: "Today", image: UIImage(named: "today"), selectedImage: UIImage(named: "today"))
         router.present(viewController, animated: animated, onDismissed: onDismissed)
     }
 }

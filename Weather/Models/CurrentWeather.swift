@@ -24,7 +24,6 @@ struct CurrentWeather {
     let icon: String
     let title: String
     let fullDescription: String
-    let city: City
     let temperature: Double
     let humidity: Int
     let pressure: Double
@@ -44,7 +43,6 @@ extension CurrentWeather {
         self.icon = weather.icon
         self.title = weather.main
         self.fullDescription = weather.weatherDescription
-        self.city = City(name: response.name, country: response.sys.country)
         self.temperature = response.main.temperature
         self.humidity = response.main.humidity
         self.pressure = response.main.pressure
