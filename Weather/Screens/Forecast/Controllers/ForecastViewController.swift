@@ -37,8 +37,14 @@ final class ForecastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         forecastView.tableView.dataSource = self
-
+        forecastView.tableView.delegate = forecastView
+        
+        registerCellForReuse()
         requestCurrentLocation()
+    }
+    
+    private func registerCellForReuse() {
+        forecastView.tableView.register(DailyWeatherTableViewCell.nib, forCellReuseIdentifier: DailyWeatherTableViewCell.reuseIdentifier)
     }
     
     private func requestCurrentLocation() {
@@ -69,6 +75,7 @@ final class ForecastViewController: UIViewController {
     private func requestWeather(for location: CLPlacemark) {
         weatherService.getWeeklyWeatherForecast(location: location).done { (weathers) in
             self.viewModel = ForecastViewModel(place: self.placemark!, forecast: weathers)
+            self.viewModel?.configureTitleForNavigationBar(self.forecastView)
             self.forecastView.tableView.reloadData()
             }.catch { (error) in
                 print("nie")
@@ -89,13 +96,14 @@ extension ForecastViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel?.titleForHeaderInSection(section)
+        return viewModel?.configureTitleForHeaderInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = forecastView.tableView.dequeueReusableCell(withIdentifier: DailyWeatherTableViewCell.reuseIdentifier, for: indexPath) as? DailyWeatherTableViewCell else { return self.tableView(tableView, cellForRowAt: indexPath); }
         
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel?.loremIpsum(indexPath)
+        viewModel?.configureDailyWeatherCell(cell, for: indexPath)
+        cell.selectionStyle = .none
         
         return cell
 

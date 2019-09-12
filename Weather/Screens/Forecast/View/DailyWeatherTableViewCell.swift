@@ -1,0 +1,54 @@
+//
+//  DailyWeatherTableViewCell.swift
+//  Weather
+//
+//  Created by Thành Đỗ Long on 12/09/2019.
+//  Copyright © 2019 Thành Đỗ Long. All rights reserved.
+//
+
+import UIKit
+
+public protocol WeatherCell: class {
+    var weatherIconImage: UIImageView! { get }
+    var timeLabel: UILabel! { get }
+    var descriptionLabel: UILabel! { get }
+    var temperatureLabel: UILabel! { get }
+}
+
+class DailyWeatherTableViewCell: UITableViewCell, WeatherCell ,ReusableView {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    @IBOutlet weak var weatherIconImage: UIImageView!
+    
+    @IBOutlet weak var timeLabel: UILabel! {
+        didSet {
+            timeLabel.font = theme.fonts.subHeadlineFont
+            timeLabel.textColor = theme.colours.primaryTextColor
+        }
+    }
+    
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.font = theme.fonts.bodyFont
+            descriptionLabel.textColor = theme.colours.primaryTextColor
+        }
+    }
+    
+    @IBOutlet weak var temperatureLabel: UILabel! {
+        didSet {
+            temperatureLabel.font = theme.fonts.forecastTemperatureFont
+            temperatureLabel.textColor = theme.colours.secondaryTextColor
+        }
+    }
+    
+}

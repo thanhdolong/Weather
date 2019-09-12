@@ -23,10 +23,7 @@ public class TodayWeatherViewModel {
     }
     
     public var location: String {
-        guard let locality = place.locality, let country = place.country else {
-            return ""
-        }
-        
+        guard let locality = place.locality, let country = place.country else { return "" }
         return "\(locality), \(country)"
     }
     
@@ -39,23 +36,23 @@ public class TodayWeatherViewModel {
     }
     
     public var rain: String {
-        guard let rain = weather.rain else {
-            return "---"
-        }
-        
+        guard let rain = weather.rain else { return "---"}
         return "\(String(format: "%.1f", rain)) mm"
     }
     
     public var pressure: String {
-        return "\(String(format: "%.0f", weather.pressure)) hPa"
+        guard let pressure = weather.pressure else { return "---"}
+        return "\(String(format: "%.0f", pressure)) hPa"
     }
     
     public var windSpeed: String {
-        return "\(String(format: "%.1f", weather.wind.speed)) km/h"
+        guard let windSpeed = weather.wind.speed else { return "---"}
+        return "\(String(format: "%.1f", windSpeed)) km/h"
     }
     
     public var windDirection: String {
-        return "\(weather.wind.deg)"
+        guard let windDirection = weather.wind.deg else { return "---"}
+        return "\(windDirection)"
     }
 }
 

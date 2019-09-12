@@ -24,20 +24,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="HNQ-3A-Zz8">
-                    <rect key="frame" x="157" y="94" width="100" height="100"/>
+                    <rect key="frame" x="157" y="138" width="100" height="100"/>
                     <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="6kD-9d-8L4">
                             <variation key="heightClass=compact-widthClass=compact" constant="75"/>
                         </constraint>
                         <constraint firstAttribute="height" constant="100" id="AzB-qC-UU9">
-                            <variation key="heightClass=compact-widthClass=compact" constant="40"/>
-                            <variation key="heightClass=compact-widthClass=regular" constant="70"/>
+                            <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
                         </constraint>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-Za-mca">
-                    <rect key="frame" x="100.5" y="202" width="213" height="20"/>
+                    <rect key="frame" x="100.5" y="246" width="213" height="20"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="current-location" translatesAutoresizingMaskIntoConstraints="NO" id="6CM-sA-6pS">
                             <rect key="frame" x="0.0" y="4" width="12" height="12"/>
@@ -51,19 +51,19 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22°C  |  Sunny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDo-Be-8RB">
-                    <rect key="frame" x="91" y="234" width="232" height="24.5"/>
+                    <rect key="frame" x="91" y="278" width="232" height="24.5"/>
                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
-                    <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" translatesAutoresizingMaskIntoConstraints="NO" id="5Cb-BX-Qoj">
-                    <rect key="frame" x="137" y="283.5" width="140" height="1"/>
+                    <rect key="frame" x="137" y="327.5" width="140" height="1"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="R7l-IK-7wr"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="obo-aU-hgy" userLabel="Humidity Stack View">
-                    <rect key="frame" x="67" y="304.5" width="30" height="50.5"/>
+                    <rect key="frame" x="67" y="348.5" width="30" height="50.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="sa3-hg-5ie">
                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -81,7 +81,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="M9l-UE-msc" userLabel="Precipitation Stack View">
-                    <rect key="frame" x="181.5" y="304.5" width="51" height="50.5"/>
+                    <rect key="frame" x="181.5" y="348.5" width="51" height="50.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="precipitation" translatesAutoresizingMaskIntoConstraints="NO" id="drK-s0-Osx">
                             <rect key="frame" x="10.5" y="0.0" width="30" height="30"/>
@@ -99,7 +99,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="65k-Gx-SCB" userLabel="Pressure Stack View">
-                    <rect key="frame" x="287" y="304.5" width="60" height="50.5"/>
+                    <rect key="frame" x="287" y="348.5" width="60" height="50.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pressure" translatesAutoresizingMaskIntoConstraints="NO" id="lqm-KV-zyp">
                             <rect key="frame" x="15" y="0.0" width="30" height="30"/>
@@ -117,7 +117,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kRo-bs-n2o" userLabel="Wind Stack View">
-                    <rect key="frame" x="67" y="373" width="280" height="50.5"/>
+                    <rect key="frame" x="67" y="417" width="280" height="50.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pbu-vD-ndk">
                             <rect key="frame" x="0.0" y="0.0" width="140" height="50.5"/>
@@ -161,21 +161,36 @@
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" translatesAutoresizingMaskIntoConstraints="NO" id="8eu-ER-gA9">
-                    <rect key="frame" x="137" y="448.5" width="140" height="1"/>
+                    <rect key="frame" x="137" y="492.5" width="140" height="1"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="TPd-Me-2Mf"/>
                         <constraint firstAttribute="height" constant="1" id="jYV-6o-YJo"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPL-P0-eTu">
-                    <rect key="frame" x="187" y="479.5" width="40" height="30"/>
+                    <rect key="frame" x="187" y="523.5" width="40" height="30"/>
                     <state key="normal" title="Share">
                         <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBG-Y5-iEU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <navigationBar contentMode="scaleToFill" shadowImage="shadowLine" translatesAutoresizingMaskIntoConstraints="NO" id="lka-Ma-ZBo">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="SV3-1w-rIL"/>
+                    </constraints>
+                    <color key="barTintColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <items>
+                        <navigationItem title="Today" id="Y2a-Ut-oiJ"/>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="lka-Ma-ZBo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="BeT-ey-0Co"/>
                 <constraint firstItem="5Cb-BX-Qoj" firstAttribute="top" secondItem="aDo-Be-8RB" secondAttribute="bottom" constant="25" id="C46-Ux-9fo">
                     <variation key="heightClass=compact-widthClass=compact" constant="8"/>
                 </constraint>
@@ -184,9 +199,11 @@
                 <constraint firstItem="8eu-ER-gA9" firstAttribute="top" secondItem="kRo-bs-n2o" secondAttribute="bottom" constant="25" id="G7k-BK-eiP"/>
                 <constraint firstItem="fNn-Za-mca" firstAttribute="centerX" secondItem="aDo-Be-8RB" secondAttribute="centerX" id="G8c-zf-9eH"/>
                 <constraint firstItem="aDo-Be-8RB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="91" id="KA7-C1-SkY"/>
+                <constraint firstItem="hBG-Y5-iEU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N2y-EV-fAE"/>
+                <constraint firstAttribute="trailing" secondItem="hBG-Y5-iEU" secondAttribute="trailing" id="O6A-eI-bMI"/>
                 <constraint firstItem="obo-aU-hgy" firstAttribute="top" secondItem="M9l-UE-msc" secondAttribute="top" id="TMd-UX-EAo"/>
                 <constraint firstItem="5Cb-BX-Qoj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TrR-Fg-ldU"/>
-                <constraint firstItem="HNQ-3A-Zz8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="UZQ-WF-vC4">
+                <constraint firstItem="HNQ-3A-Zz8" firstAttribute="top" secondItem="lka-Ma-ZBo" secondAttribute="bottom" constant="50" id="UZQ-WF-vC4">
                     <variation key="heightClass=compact-widthClass=compact" constant="9"/>
                     <variation key="heightClass=compact-widthClass=regular" constant="20"/>
                 </constraint>
@@ -194,6 +211,7 @@
                 <constraint firstItem="kRo-bs-n2o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YeO-D6-i5D"/>
                 <constraint firstItem="aDo-Be-8RB" firstAttribute="top" secondItem="fNn-Za-mca" secondAttribute="bottom" constant="12" id="YvZ-6O-bEs"/>
                 <constraint firstItem="M9l-UE-msc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="auq-hs-P2h"/>
+                <constraint firstItem="lka-Ma-ZBo" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="cVc-5B-BYh"/>
                 <constraint firstItem="obo-aU-hgy" firstAttribute="leading" secondItem="kRo-bs-n2o" secondAttribute="leading" id="caJ-34-zeL"/>
                 <constraint firstItem="kRo-bs-n2o" firstAttribute="top" secondItem="M9l-UE-msc" secondAttribute="bottom" constant="18" id="dgi-J5-s3D"/>
                 <constraint firstItem="M9l-UE-msc" firstAttribute="top" secondItem="5Cb-BX-Qoj" secondAttribute="bottom" constant="20" id="eaz-Or-lXG">
@@ -204,13 +222,17 @@
                 <constraint firstItem="TPL-P0-eTu" firstAttribute="top" secondItem="8eu-ER-gA9" secondAttribute="bottom" constant="30" id="l5Z-Cc-7zD"/>
                 <constraint firstItem="65k-Gx-SCB" firstAttribute="top" secondItem="M9l-UE-msc" secondAttribute="top" id="mZZ-W2-PuR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aDo-Be-8RB" secondAttribute="trailing" constant="91" id="mfw-jw-Qbp"/>
+                <constraint firstItem="hBG-Y5-iEU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="seK-j3-O5v"/>
+                <constraint firstItem="lka-Ma-ZBo" firstAttribute="bottom" secondItem="hBG-Y5-iEU" secondAttribute="bottom" id="vuI-d5-RjH"/>
                 <constraint firstItem="fNn-Za-mca" firstAttribute="top" secondItem="HNQ-3A-Zz8" secondAttribute="bottom" constant="8" id="yXY-Bm-tas"/>
+                <constraint firstItem="lka-Ma-ZBo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zZe-JB-XRY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
                 <outlet property="curentLocationImage" destination="6CM-sA-6pS" id="fgv-Pa-VJx"/>
                 <outlet property="currentLocationLabel" destination="Zuw-pO-Z0n" id="Cqq-iV-1h0"/>
                 <outlet property="humidityLabel" destination="2TU-D9-Gzk" id="uuG-kJ-DRr"/>
+                <outlet property="navigationBar" destination="lka-Ma-ZBo" id="c8A-R7-wzO"/>
                 <outlet property="precipitationLabel" destination="2J4-H6-Nao" id="nza-PN-6em"/>
                 <outlet property="pressureLabel" destination="5Gb-Wn-UOv" id="vIX-BK-bEj"/>
                 <outlet property="temperatureLabel" destination="aDo-Be-8RB" id="vsM-Oh-8IJ"/>
@@ -228,6 +250,7 @@
         <image name="humidity" width="30" height="30"/>
         <image name="precipitation" width="30" height="30"/>
         <image name="pressure" width="30" height="30"/>
+        <image name="shadowLine" width="375" height="2"/>
         <image name="wind" width="30" height="30"/>
         <image name="wind-direction" width="30" height="30"/>
     </resources>

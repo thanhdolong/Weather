@@ -19,22 +19,47 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8lW-cf-vBv">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWB-js-Inz">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <navigationBar contentMode="scaleToFill" shadowImage="shadowLine" translatesAutoresizingMaskIntoConstraints="NO" id="mVc-c9-IEo">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="tbk-zn-hEO"/>
+                    </constraints>
+                    <color key="barTintColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <items>
+                        <navigationItem title="Prague" id="XGh-Jf-eqr"/>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="8lW-cf-vBv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ih0-cC-25h"/>
-                <constraint firstItem="8lW-cf-vBv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="L2S-72-QuV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8lW-cf-vBv" secondAttribute="trailing" id="Pyc-Vo-mi0"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8lW-cf-vBv" secondAttribute="bottom" id="l8Q-Na-j21"/>
+                <constraint firstItem="8lW-cf-vBv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2TJ-7w-5SL"/>
+                <constraint firstItem="SWB-js-Inz" firstAttribute="bottom" secondItem="mVc-c9-IEo" secondAttribute="bottom" id="6bi-RS-Wdc"/>
+                <constraint firstAttribute="trailing" secondItem="SWB-js-Inz" secondAttribute="trailing" id="9td-m4-px0"/>
+                <constraint firstItem="8lW-cf-vBv" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="E2y-PI-aaH"/>
+                <constraint firstItem="8lW-cf-vBv" firstAttribute="top" secondItem="SWB-js-Inz" secondAttribute="bottom" id="Ld8-oU-i5h"/>
+                <constraint firstItem="8lW-cf-vBv" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="WLJ-xf-5hU"/>
+                <constraint firstItem="mVc-c9-IEo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ah0-0b-blQ"/>
+                <constraint firstItem="SWB-js-Inz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gHn-Nn-Pdn"/>
+                <constraint firstItem="mVc-c9-IEo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gvI-Zg-EKO"/>
+                <constraint firstItem="mVc-c9-IEo" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="n2C-Gh-r8y"/>
+                <constraint firstItem="SWB-js-Inz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yR5-0F-vvX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
+                <outlet property="navigationBar" destination="mVc-c9-IEo" id="32C-Xt-rP5"/>
                 <outlet property="tableView" destination="8lW-cf-vBv" id="n7P-pN-m4v"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
+    <resources>
+        <image name="shadowLine" width="375" height="2"/>
+    </resources>
 </document>

@@ -9,7 +9,19 @@
 import UIKit
 
 public class TodayView: UIView {
+    @IBOutlet weak var navigationBar: UINavigationBar!  {
+        didSet {
+            let attrs = [
+                NSAttributedString.Key.foregroundColor: theme.colours.primaryTextColor,
+                NSAttributedString.Key.font: theme.fonts.navigationBarFont
+            ]
+            
+            navigationBar.titleTextAttributes = attrs
+        }
+    }
+    
     @IBOutlet weak var weatherIconImage: UIImageView!
+    
     @IBOutlet weak var curentLocationImage: UIImageView! {
         didSet {
             curentLocationImage.isHidden = true

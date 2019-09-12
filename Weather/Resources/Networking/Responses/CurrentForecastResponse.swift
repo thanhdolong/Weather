@@ -14,7 +14,6 @@ struct CurrentWeatherForecastResponse: Decodable {
     let main: Main
     let wind: CurrentWeatherForecastResponse.Wind
     let rain: CurrentWeatherForecastResponse.Rain?
-    let sys: CurrentWeatherForecastResponse.Sys
     
     struct Weather: Codable {
         let icon: String
@@ -30,8 +29,8 @@ struct CurrentWeatherForecastResponse: Decodable {
     
     struct Main: Codable {
         let temperature: Double
-        let pressure: Double
-        let humidity: Int
+        let pressure: Double?
+        let humidity: Int?
         
         enum CodingKeys: String, CodingKey {
             case temperature = "temp"
@@ -41,20 +40,16 @@ struct CurrentWeatherForecastResponse: Decodable {
     }
     
     struct Wind: Codable {
-        let deg: Double
-        let speed: Double
+        let deg: Double?
+        let speed: Double?
     }
     
     struct Rain: Codable {
-        let volume: Double
+        let volume: Double?
         
         enum CodingKeys: String, CodingKey {
             case volume = "3h"
         }
-    }
-    
-    struct Sys: Codable {
-        let country: String
     }
 }
 

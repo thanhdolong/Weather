@@ -23,34 +23,20 @@ public class ForecastViewModel {
         }
     }
     
-    public func titleForHeaderInSection(_ section: Int) -> String? {
-        let calendar = Calendar.current
-        
-        let dateComponent = getKeyFrom(section)
-        
-        if isCurrentDateInToday(from: dateComponent) {
-            return "Today"
-        } else {
-            let localizedWeekday = calendar.weekdaySymbols[dateComponent.weekday! - 1]
-            return localizedWeekday
+    public var city: String {
+        guard let country = place.locality else {
+            return "Forecast"
         }
-    }
-    
-    public func loremIpsum(_ indexPath: IndexPath) -> String? {
-        let key = getKeyFrom(indexPath.section)
-        let weather = forecast[key]![indexPath.row]
-        return "\(weather.date) \(weather.description)"
+        
+        return country
     }
     
     public var numberOfSections: Int {
         return forecast.count
     }
-    
-    public func numberOfRowsInSection(_ section: Int) -> Int {
-        let key = getKeyFrom(section)
-        return forecast[key]!.count
-    }
-    
+}
+
+extension ForecastViewModel {
     private func isCurrentDateInToday(from date: DateComponents) -> Bool {
         guard let date = Calendar.current.date(from: date) else { return false }
         
@@ -63,11 +49,47 @@ public class ForecastViewModel {
             return calendar.date(from: firstDate)!.timeIntervalSince1970 < calendar.date(from: secondDate)!.timeIntervalSince1970
         })[section]
     }
+    
+    private func getWeatherFrom(_ indexPath: IndexPath) -> DailyWeather? {
+        let key = getKeyFrom(indexPath.section)
+        let weather = forecast[key]?[indexPath.row]
+        return weather
+    }
 }
 
 extension ForecastViewModel {
-    public func configure(_ view: UIView) {
+    public func numberOfRowsInSection(_ section: Int) -> Int {
+        let key = getKeyFrom(section)
+        return forecast[key]!.count
+    }
+    
+    public func configureTitleForHeaderInSection(_ section: Int) -> String? {
+        let calendar = Calendar.current
         
+        let dateComponent = getKeyFrom(section)
+        
+        if isCurrentDateInToday(from: dateComponent) {
+            return "Today"
+        } else {
+            let localizedWeekday = calendar.weekdaySymbols[dateComponent.weekday! - 1]
+            return localizedWeekday
+        }
+    }
+    
+    public func configureTitleForNavigationBar(_ view: ForecastView) {
+        view.navigationBar.topItem?.title = city
+    }
+    
+    public func configureDailyWeatherCell(_ view: WeatherCell, for indexPath: IndexPath) {
+        guard let weather = getWeatherFrom(indexPath) else { return }
+        
+        let format = DateFormatter()
+        format.dateFormat = "HH:mm"
+        
+        view.weatherIconImage.image = UIImage(named: weather.icon)
+        view.timeLabel.text = format.string(from: weather.date)
+        view.descriptionLabel.text = weather.description
+        view.temperatureLabel.text = "\(String(format: "%.0f", weather.temperature)) °"
     }
 }
 

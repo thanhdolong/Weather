@@ -24,6 +24,9 @@ protocol ColourScheme {
     // Backgrounds
     var shareColor: UIColor { get }
     
+    // Border color for sections
+    var borderColor: UIColor { get }
+    
     // Primary text color: the color displayed most frequently across your app’s screens and components.
     // Secondary text color: Provides ways to accent and distinguish your product. Floating action buttons use the secondary color.
     var primaryTextColor: UIColor { get }

@@ -29,6 +29,8 @@ public struct DefaultTheme: ThemeStrategy {
         
         let shareColor: UIColor = UIColor(hexString: "#FF8847")
         
+        let borderColor: UIColor = UIColor(hexString: "#DEDEDE")
+        
         let primaryTextColor: UIColor = UIColor(hexString: "#333333")
         let secondaryTextColor: UIColor = UIColor(hexString: "#2F91FF")
     }

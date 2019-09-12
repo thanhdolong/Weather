@@ -25,14 +25,14 @@ struct CurrentWeather {
     let title: String
     let fullDescription: String
     let temperature: Double
-    let humidity: Int
-    let pressure: Double
+    let humidity: Int?
+    let pressure: Double?
     let wind: Wind
     let rain: Double?
     
     struct Wind {
-        let deg: Double
-        let speed: Double
+        let deg: Double?
+        let speed: Double?
     }
 }
 

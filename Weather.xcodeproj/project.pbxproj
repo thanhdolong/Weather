@@ -13,6 +13,9 @@
 		6F1D1F0C232A49540007D42A /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1D1F0B232A49540007D42A /* TodayView.swift */; };
 		6F1D1F0E232A5DF00007D42A /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1D1F0D232A5DF00007D42A /* ForecastView.swift */; };
 		6F1D1F10232A61DD0007D42A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1D1F0F232A61DD0007D42A /* UIView.swift */; };
+		6F1D1F16232A9F7E0007D42A /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1D1F15232A9F7E0007D42A /* ReusableView.swift */; };
+		6F1D1F19232AA1DC0007D42A /* DailyWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1D1F17232AA1DC0007D42A /* DailyWeatherTableViewCell.swift */; };
+		6F1D1F1A232AA1DC0007D42A /* DailyWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1D1F18232AA1DC0007D42A /* DailyWeatherTableViewCell.xib */; };
 		6F41C14F231D575800B23B2B /* TodayWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41C14E231D575800B23B2B /* TodayWeatherViewModel.swift */; };
 		6F41C151231D581F00B23B2B /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41C150231D581F00B23B2B /* ForecastViewModel.swift */; };
 		6F41C153231D60CA00B23B2B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41C152231D60CA00B23B2B /* Coordinator.swift */; };
@@ -75,6 +78,9 @@
 		6F1D1F0B232A49540007D42A /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		6F1D1F0D232A5DF00007D42A /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		6F1D1F0F232A61DD0007D42A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		6F1D1F15232A9F7E0007D42A /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		6F1D1F17232AA1DC0007D42A /* DailyWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		6F1D1F18232AA1DC0007D42A /* DailyWeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyWeatherTableViewCell.xib; sourceTree = "<group>"; };
 		6F41C14E231D575800B23B2B /* TodayWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherViewModel.swift; sourceTree = "<group>"; };
 		6F41C150231D581F00B23B2B /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		6F41C152231D60CA00B23B2B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -170,6 +176,8 @@
 			children = (
 				6F41C160231D645900B23B2B /* ForecastView.xib */,
 				6F1D1F0D232A5DF00007D42A /* ForecastView.swift */,
+				6F1D1F17232AA1DC0007D42A /* DailyWeatherTableViewCell.swift */,
+				6F1D1F18232AA1DC0007D42A /* DailyWeatherTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +197,7 @@
 				6F7743D923298EF50074C80C /* UIViewController.swift */,
 				6F7743DB23298F1E0074C80C /* UIColor.swift */,
 				6F1D1F0F232A61DD0007D42A /* UIView.swift */,
+				6F1D1F15232A9F7E0007D42A /* ReusableView.swift */,
 			);
 			path = "Utilities+Extensions";
 			sourceTree = "<group>";
@@ -551,6 +560,7 @@
 				6FE82CEC231D22FF00E3308A /* LaunchScreen.storyboard in Resources */,
 				6F41C162231D645900B23B2B /* ForecastView.xib in Resources */,
 				6F7743DF232995CB0074C80C /* Montserrat-SemiBold.ttf in Resources */,
+				6F1D1F1A232AA1DC0007D42A /* DailyWeatherTableViewCell.xib in Resources */,
 				6FE072452329463C0047EF9B /* TodayView.xib in Resources */,
 				6F7743DE232995C80074C80C /* Montserrat-Medium.ttf in Resources */,
 				6FE82CE9231D22FF00E3308A /* Images.xcassets in Resources */,
@@ -697,11 +707,13 @@
 				6FE82CE2231D22FE00E3308A /* AppDelegate.swift in Sources */,
 				6F41C151231D581F00B23B2B /* ForecastViewModel.swift in Sources */,
 				6FE82D2D231D338700E3308A /* DailyWeather.swift in Sources */,
+				6F1D1F16232A9F7E0007D42A /* ReusableView.swift in Sources */,
 				6F7743DC23298F1E0074C80C /* UIColor.swift in Sources */,
 				6F0A00E42322877A00C788F5 /* CurrentForecastResponse.swift in Sources */,
 				6FFC27AC232108A200C9BCFC /* OpenWeatherRoute.swift in Sources */,
 				6F1D1F0E232A5DF00007D42A /* ForecastView.swift in Sources */,
 				6F1D1F10232A61DD0007D42A /* UIView.swift in Sources */,
+				6F1D1F19232AA1DC0007D42A /* DailyWeatherTableViewCell.swift in Sources */,
 				6F41C153231D60CA00B23B2B /* Coordinator.swift in Sources */,
 				6FFC27AA2321009C00C9BCFC /* Route.swift in Sources */,
 				6F41C157231D616500B23B2B /* TodayCoordinator.swift in Sources */,
