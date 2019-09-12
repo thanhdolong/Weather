@@ -46,12 +46,14 @@ extension OpenWeatherRoute: Route {
             return [
                 "lat": lat,
                 "lon": lng,
+                "units": "metric",
                 "appid": "7823f667f5f356e0d6e680998463907d"
             ]
         case .forecast(let lat, let lng):
             return [
                 "lat": lat,
                 "lon": lng,
+                "units": "metric",
                 "appid": "7823f667f5f356e0d6e680998463907d"
             ]
         }
