@@ -19,7 +19,7 @@ public class TodayWeatherViewModel {
     }
     
     public var description: String {
-        return "meh"
+        return "The forecast for today in \(location): \(temperature)."
     }
     
     public var weatherIcon: UIImage? {

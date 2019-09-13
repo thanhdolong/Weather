@@ -10,11 +10,22 @@ import UIKit
 
 // MARK: Alert Extensions
 extension UIViewController {
-    func showAlert(withTitle title: String?, message: String?) {
+    func presentAlertAction(withTitle title: String?,
+                   message: String?,
+                   alertActions: [UIAlertAction]? = nil,
+                   handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        
+        if let alertActions = alertActions {
+            for action in alertActions {
+                alert.addAction(action)
+            }
+        } else {
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: handler)
+            alert.addAction(action)
+        }
+        
+        present(alert, animated: true, completion: nil )
     }
 }
 

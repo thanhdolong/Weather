@@ -238,6 +238,7 @@
                 <outlet property="navigationBar" destination="lka-Ma-ZBo" id="c8A-R7-wzO"/>
                 <outlet property="precipitationLabel" destination="2J4-H6-Nao" id="nza-PN-6em"/>
                 <outlet property="pressureLabel" destination="5Gb-Wn-UOv" id="vIX-BK-bEj"/>
+                <outlet property="shareButton" destination="TPL-P0-eTu" id="Hz6-Tm-XCD"/>
                 <outlet property="temperatureLabel" destination="aDo-Be-8RB" id="vsM-Oh-8IJ"/>
                 <outlet property="weatherIconImage" destination="HNQ-3A-Zz8" id="v7m-Im-6cT"/>
                 <outlet property="windDirectionLabel" destination="q1m-W6-dsu" id="S9p-hP-gLG"/>

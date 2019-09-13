@@ -83,4 +83,12 @@ public class TodayView: UIView {
             windDirectionLabel.textColor = theme.colours.primaryTextColor
         }
     }
+    
+    @IBOutlet weak var shareButton: UIButton! {
+        didSet {
+            shareButton.setTitleColor(theme.colours.shareColor, for: .normal)
+            shareButton.titleLabel?.font = theme.fonts.subHeadlineFont
+        }
+    }
+    
 }

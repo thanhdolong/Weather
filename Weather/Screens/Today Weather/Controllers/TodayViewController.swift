@@ -11,7 +11,10 @@ import PromiseKit
 import CoreLocation
 
 protocol TodayViewControllerDelegate: class {
-    func didShareButtonTapped(text description: String)
+    func todayViewControllerDidPressShareButton(_ viewController: TodayViewController, text description: String?)
+    func todayViewControllerDidReceiveNetworkError(_ viewController: TodayViewController)
+    func todayViewControllerDidReceiveLocationError(_ viewController: TodayViewController)
+    func todayViewControllerDidReceiveError(_ viewController: TodayViewController, description: String)
 }
 
 class TodayViewController: UIViewController {
@@ -39,17 +42,20 @@ class TodayViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        indicator = showActivityIndicatory(onView: self.view)
-        requestCurrentLocation()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if viewModel == nil {
+            indicator = showActivityIndicatory(onView: self.view)
+            requestCurrentLocation()
+        }
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
-        delegate?.didShareButtonTapped(text: viewModel?.description ?? "")
+        delegate?.todayViewControllerDidPressShareButton(self, text: viewModel?.description ?? "")
     }
     
-    private func requestCurrentLocation() {
+    public func requestCurrentLocation() {
         locationService.getLocation().done { location in
             self.placemark = location
             self.requestWeather(for: location)
@@ -59,20 +65,21 @@ class TodayViewController: UIViewController {
         }.catch { (error) in
             switch error {
             case is CLError where (error as? CLError)?.code == .denied:
-                print("Error is denied")
-                print("Enable Location Permissions in Settings")
+                print("Location Error")
+                self.delegate?.todayViewControllerDidReceiveLocationError(self)
             case is CLError where (error as? CLError)?.code == .network:
-                print("Error is network")
-                print(error.localizedDescription)
+                print("Network Error")
+                self.delegate?.todayViewControllerDidReceiveNetworkError(self)
             case is CLLocationManager.PMKError:
                 let error = error as! CLLocationManager.PMKError
                 switch error {
                 case .notAuthorized:
-                    print("sem tu u not Authorized")
+                    print("Location Error")
+                    self.delegate?.todayViewControllerDidReceiveLocationError(self)
                 }
             default:
-                print("Error is default")
-                print(error.localizedDescription)
+                print("Default Error")
+                self.delegate?.todayViewControllerDidReceiveError(self, description: error.localizedDescription)
             }
         }
     }
@@ -85,10 +92,9 @@ class TodayViewController: UIViewController {
             guard let indicator = self.indicator else { return }
             self.removeIndicator(indicator: indicator)
         }.catch { (error) in
-                print("nie")
-                print(error)
-                print("-----")
-                print(error.localizedDescription)
+            print("Other Error")
+            print(error)
+            self.delegate?.todayViewControllerDidReceiveError(self, description: error.localizedDescription)
         }
     }
 }

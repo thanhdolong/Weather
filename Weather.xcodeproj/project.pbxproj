@@ -155,13 +155,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F1D1F1B232ADA380007D42A /* Alert Message */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Alert Message";
-			sourceTree = "<group>";
-		};
 		6F41C15A231D618B00B23B2B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,7 +326,6 @@
 		6FE82D1F231D2A3800E3308A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6F1D1F1B232ADA380007D42A /* Alert Message */,
 				6FE82D20231D2A8000E3308A /* Today Weather */,
 				6FE82D21231D2ABF00E3308A /* Forecast Weather */,
 			);

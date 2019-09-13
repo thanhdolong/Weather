@@ -10,6 +10,13 @@ import UIKit
 import PromiseKit
 import CoreLocation
 
+protocol ForecastViewControllerDelegate: class {
+    func forecastViewControllerDidReceiveNetworkError(_ viewController: ForecastViewController)
+    func forecastViewControllerDidReceiveLocationError(_ viewController: ForecastViewController)
+    func forecastViewControllerDidReceiveError(_ viewController: ForecastViewController, description: String)
+}
+
+
 final class ForecastViewController: UIViewController {
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -23,6 +30,8 @@ final class ForecastViewController: UIViewController {
     
     private let weatherService: WeatherService
     private let locationService: LocationService
+    
+    weak var delegate: ForecastViewControllerDelegate?
     
     var indicator: UIView?
     var placemark: CLPlacemark?
@@ -51,9 +60,15 @@ final class ForecastViewController: UIViewController {
         forecastView.tableView.addSubview(refreshControl)
         
         registerCellForReuse()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        indicator = showActivityIndicatory(onView: self.view)
-        requestCurrentLocation()
+        if viewModel == nil {
+            indicator = showActivityIndicatory(onView: self.view)
+            requestCurrentLocation()
+        }
     }
     
     @objc func refresh(_ sender: UIRefreshControl) {
@@ -69,25 +84,31 @@ final class ForecastViewController: UIViewController {
             self.placemark = location
             self.requestWeather(for: location)
         }.ensure {
+            self.refreshControl.endRefreshing()
+            
             guard let indicator = self.indicator else { return }
             self.removeIndicator(indicator: indicator)
         }.catch { (error) in
             switch error {
             case is CLError where (error as? CLError)?.code == .denied:
-                print("Error is denied")
-                print("Enable Location Permissions in Settings")
+                print("Location Error")
+                self.delegate?.forecastViewControllerDidReceiveLocationError(self)
+                
             case is CLError where (error as? CLError)?.code == .network:
-                print("Error is network")
-                print(error.localizedDescription)
+                print("Network error")
+                self.delegate?.forecastViewControllerDidReceiveNetworkError(self)
+                
             case is CLLocationManager.PMKError:
                 let error = error as! CLLocationManager.PMKError
                 switch error {
                 case .notAuthorized:
-                    print("sem tu u not Authorized")
+                    print("Location Error")
+                    self.delegate?.forecastViewControllerDidReceiveLocationError(self)
                 }
+                
             default:
-                print("Error is default")
-                print(error.localizedDescription)
+                print("Default Error")
+                self.delegate?.forecastViewControllerDidReceiveError(self, description: error.localizedDescription)
             }
         }
     }
@@ -103,10 +124,9 @@ final class ForecastViewController: UIViewController {
                 guard let indicator = self.indicator else { return }
                 self.removeIndicator(indicator: indicator)
             }.catch { (error) in
-                print("nie")
+                print("Other Error")
                 print(error)
-                print("-----")
-                print(error.localizedDescription)
+                self.delegate?.forecastViewControllerDidReceiveError(self, description: error.localizedDescription)
         }
     }
 }
@@ -133,6 +153,4 @@ extension ForecastViewController: UITableViewDataSource {
         return cell
 
     }
-    
-    
 }
