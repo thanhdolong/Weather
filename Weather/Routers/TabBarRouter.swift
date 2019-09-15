@@ -30,8 +30,8 @@ public class TabBarRouter: NSObject, Router {
     private func setAppearance() {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: DefaultTheme().fonts.tapBarFont], for: .normal)
         
-        tabBarController.tabBar.tintColor = theme.colours.secondaryTextColor
-        tabBarController.tabBar.unselectedItemTintColor = theme.colours.primaryTextColor
+        tabBarController.tabBar.tintColor = UIColor(named: "secondaryTextColor")
+        tabBarController.tabBar.unselectedItemTintColor = UIColor(named: "primaryTextColor")
     }
     
     // MARK: - Router

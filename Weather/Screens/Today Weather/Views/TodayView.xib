@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,13 +38,13 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-Za-mca">
-                    <rect key="frame" x="100.5" y="246" width="213" height="20"/>
+                    <rect key="frame" x="104.5" y="246" width="205" height="24"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="current-location" translatesAutoresizingMaskIntoConstraints="NO" id="6CM-sA-6pS">
-                            <rect key="frame" x="0.0" y="4" width="12" height="12"/>
+                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prague, Czech Republic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuw-pO-Z0n">
-                            <rect key="frame" x="20" y="0.0" width="193" height="20"/>
+                            <rect key="frame" x="32" y="2.5" width="173" height="19"/>
                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -51,29 +52,29 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22°C  |  Sunny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDo-Be-8RB">
-                    <rect key="frame" x="91" y="278" width="232" height="24.5"/>
+                    <rect key="frame" x="91" y="282" width="232" height="23.5"/>
                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
-                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" translatesAutoresizingMaskIntoConstraints="NO" id="5Cb-BX-Qoj">
-                    <rect key="frame" x="137" y="327.5" width="140" height="1"/>
+                    <rect key="frame" x="137" y="330.5" width="140" height="2"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="R7l-IK-7wr"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="obo-aU-hgy" userLabel="Humidity Stack View">
-                    <rect key="frame" x="67" y="348.5" width="30" height="50.5"/>
+                    <rect key="frame" x="67" y="352.5" width="60" height="49.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="sa3-hg-5ie">
-                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="FwG-BI-dlX"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="57%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TU-D9-Gzk">
-                            <rect key="frame" x="1" y="33" width="28.5" height="17.5"/>
+                            <rect key="frame" x="15" y="33" width="30" height="16.5"/>
                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -81,17 +82,17 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="M9l-UE-msc" userLabel="Precipitation Stack View">
-                    <rect key="frame" x="181.5" y="348.5" width="51" height="50.5"/>
+                    <rect key="frame" x="177" y="352.5" width="60" height="49.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="precipitation" translatesAutoresizingMaskIntoConstraints="NO" id="drK-s0-Osx">
-                            <rect key="frame" x="10.5" y="0.0" width="30" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Oua-xe-yN3"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0 mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2J4-H6-Nao">
-                            <rect key="frame" x="0.0" y="33" width="51" height="17.5"/>
+                            <rect key="frame" x="6.5" y="33" width="47.5" height="16.5"/>
                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -99,17 +100,17 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="65k-Gx-SCB" userLabel="Pressure Stack View">
-                    <rect key="frame" x="287" y="348.5" width="60" height="50.5"/>
+                    <rect key="frame" x="287" y="352.5" width="60" height="49.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pressure" translatesAutoresizingMaskIntoConstraints="NO" id="lqm-KV-zyp">
-                            <rect key="frame" x="15" y="0.0" width="30" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="tTs-QM-iET"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1019 hPa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gb-Wn-UOv">
-                            <rect key="frame" x="0.0" y="33" width="60" height="17.5"/>
+                            <rect key="frame" x="0.5" y="33" width="59.5" height="16.5"/>
                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -117,20 +118,20 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kRo-bs-n2o" userLabel="Wind Stack View">
-                    <rect key="frame" x="67" y="417" width="280" height="50.5"/>
+                    <rect key="frame" x="67" y="420" width="280" height="40"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pbu-vD-ndk">
-                            <rect key="frame" x="0.0" y="0.0" width="140" height="50.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="140" height="40"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-ID-RIO">
-                                    <rect key="frame" x="55" y="0.0" width="30" height="30"/>
+                                    <rect key="frame" x="40" y="0.0" width="60" height="30"/>
                                     <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="BWM-Oq-7Zh"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oA-jv-I5i">
-                                    <rect key="frame" x="40.5" y="33" width="59" height="17.5"/>
+                                    <rect key="frame" x="44.5" y="33" width="51.5" height="7"/>
                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -138,17 +139,17 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="cbA-VI-cjz" userLabel="Wind Direction Stack View">
-                            <rect key="frame" x="140" y="0.0" width="140" height="50.5"/>
+                            <rect key="frame" x="140" y="0.0" width="140" height="40"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind-direction" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-xf-uJv">
-                                    <rect key="frame" x="55" y="0.0" width="30" height="30"/>
+                                    <rect key="frame" x="40" y="0.0" width="60" height="30"/>
                                     <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="NMe-9A-RfI"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1m-W6-dsu">
-                                    <rect key="frame" x="61" y="33" width="18.5" height="17.5"/>
+                                    <rect key="frame" x="61" y="33" width="18" height="7"/>
                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -161,16 +162,16 @@
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" translatesAutoresizingMaskIntoConstraints="NO" id="8eu-ER-gA9">
-                    <rect key="frame" x="137" y="492.5" width="140" height="1"/>
+                    <rect key="frame" x="137" y="485" width="140" height="1"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="TPd-Me-2Mf"/>
                         <constraint firstAttribute="height" constant="1" id="jYV-6o-YJo"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPL-P0-eTu">
-                    <rect key="frame" x="187" y="523.5" width="40" height="30"/>
+                    <rect key="frame" x="187" y="516" width="40" height="30"/>
                     <state key="normal" title="Share">
-                        <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="shareButtonTapped:" destination="-1" eventType="touchUpInside" id="bW8-jA-tjJ"/>
@@ -178,20 +179,20 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBG-Y5-iEU">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
-                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <navigationBar contentMode="scaleToFill" shadowImage="shadowLine" translatesAutoresizingMaskIntoConstraints="NO" id="lka-Ma-ZBo">
                     <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="SV3-1w-rIL"/>
                     </constraints>
-                    <color key="barTintColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="barTintColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <items>
                         <navigationItem title="Today" id="Y2a-Ut-oiJ"/>
                     </items>
                 </navigationBar>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="backgroundColor"/>
             <constraints>
                 <constraint firstItem="lka-Ma-ZBo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="BeT-ey-0Co"/>
                 <constraint firstItem="5Cb-BX-Qoj" firstAttribute="top" secondItem="aDo-Be-8RB" secondAttribute="bottom" constant="25" id="C46-Ux-9fo">
@@ -257,5 +258,8 @@
         <image name="shadowLine" width="375" height="2"/>
         <image name="wind" width="30" height="30"/>
         <image name="wind-direction" width="30" height="30"/>
+        <namedColor name="backgroundColor">
+            <color red="0.59607843137254901" green="0.59607843137254901" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

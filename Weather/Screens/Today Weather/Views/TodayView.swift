@@ -11,9 +11,9 @@ import UIKit
 public class TodayView: UIView {
     @IBOutlet weak var navigationBar: UINavigationBar!  {
         didSet {
-            let attrs = [
-                NSAttributedString.Key.foregroundColor: theme.colours.primaryTextColor,
-                NSAttributedString.Key.font: theme.fonts.navigationBarFont
+            let attrs: [NSAttributedString.Key : Any] = [
+                .foregroundColor: UIColor(named: "primaryTextColor")!,
+                .font: theme.fonts.navigationBarFont
             ]
             
             navigationBar.titleTextAttributes = attrs
@@ -32,7 +32,7 @@ public class TodayView: UIView {
         didSet {
             currentLocationLabel.text = ""
             currentLocationLabel.font = theme.fonts.subHeadlineFont
-            currentLocationLabel.textColor = theme.colours.primaryTextColor
+            currentLocationLabel.textColor = UIColor(named: "primaryTextColor")
         }
     }
     
@@ -40,7 +40,7 @@ public class TodayView: UIView {
         didSet {
             temperatureLabel.text = "---"
             temperatureLabel.font = theme.fonts.headlineFont
-            temperatureLabel.textColor = theme.colours.secondaryTextColor
+            temperatureLabel.textColor = UIColor(named: "secondaryTextColor")
         }
     }
     
@@ -48,7 +48,7 @@ public class TodayView: UIView {
         didSet {
             humidityLabel.text = "---"
             humidityLabel.font = theme.fonts.bodyFont
-            humidityLabel.textColor = theme.colours.primaryTextColor
+            humidityLabel.textColor = UIColor(named: "primaryTextColor")
         }
     }
     
@@ -56,7 +56,7 @@ public class TodayView: UIView {
         didSet {
             precipitationLabel.text = "---"
             precipitationLabel.font = theme.fonts.bodyFont
-            precipitationLabel.textColor = theme.colours.primaryTextColor
+            precipitationLabel.textColor = UIColor(named: "primaryTextColor")
         }
     }
     
@@ -64,7 +64,7 @@ public class TodayView: UIView {
         didSet {
             pressureLabel.text = "---"
             pressureLabel.font = theme.fonts.bodyFont
-            pressureLabel.textColor = theme.colours.primaryTextColor
+            pressureLabel.textColor = UIColor(named: "primaryTextColor")
         }
     }
     
@@ -72,7 +72,7 @@ public class TodayView: UIView {
         didSet {
             windSpeedLabel.text = "---"
             windSpeedLabel.font = theme.fonts.bodyFont
-            windSpeedLabel.textColor = theme.colours.primaryTextColor
+            windSpeedLabel.textColor = UIColor(named: "primaryTextColor")
         }
     }
     
@@ -80,13 +80,13 @@ public class TodayView: UIView {
         didSet {
             windDirectionLabel.text = "---"
             windDirectionLabel.font = theme.fonts.bodyFont
-            windDirectionLabel.textColor = theme.colours.primaryTextColor
+            windDirectionLabel.textColor = UIColor(named: "primaryTextColor")
         }
     }
     
     @IBOutlet weak var shareButton: UIButton! {
         didSet {
-            shareButton.setTitleColor(theme.colours.shareColor, for: .normal)
+            shareButton.setTitleColor(UIColor(named: "shareColor"), for: .normal)
             shareButton.titleLabel?.font = theme.fonts.subHeadlineFont
         }
     }

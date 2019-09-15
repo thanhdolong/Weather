@@ -33,21 +33,21 @@ class DailyWeatherTableViewCell: UITableViewCell, WeatherCell ,ReusableView {
     @IBOutlet weak var timeLabel: UILabel! {
         didSet {
             timeLabel.font = theme.fonts.subHeadlineFont
-            timeLabel.textColor = theme.colours.primaryTextColor
+            timeLabel.textColor = UIColor(named: "primaryTextColor")
         }
     }
     
     @IBOutlet weak var descriptionLabel: UILabel! {
         didSet {
             descriptionLabel.font = theme.fonts.bodyFont
-            descriptionLabel.textColor = theme.colours.primaryTextColor
+            descriptionLabel.textColor = UIColor(named: "primaryTextColor")
         }
     }
     
     @IBOutlet weak var temperatureLabel: UILabel! {
         didSet {
             temperatureLabel.font = theme.fonts.forecastTemperatureFont
-            temperatureLabel.textColor = theme.colours.secondaryTextColor
+            temperatureLabel.textColor = UIColor(named: "secondaryTextColor")
         }
     }
     

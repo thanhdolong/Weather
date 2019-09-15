@@ -11,9 +11,9 @@ import UIKit
 public class ForecastView: UIView {
     @IBOutlet weak var navigationBar: UINavigationBar! {
         didSet {
-            let attrs = [
-                NSAttributedString.Key.foregroundColor: theme.colours.primaryTextColor,
-                NSAttributedString.Key.font: theme.fonts.navigationBarFont
+            let attrs: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor(named: "primaryTextColor")!,
+                .font: theme.fonts.navigationBarFont
             ]
             
             navigationBar.titleTextAttributes = attrs
@@ -32,14 +32,14 @@ public class ForecastView: UIView {
 extension ForecastView: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
-        view.tintColor = .white
+        view.tintColor = UIColor(named: "backgroundColor")
 
         
         let header = view as! UITableViewHeaderFooterView
         header.layer.borderWidth = 1
-        header.layer.borderColor = theme.colours.borderColor.cgColor
+        header.layer.borderColor = UIColor(named: "borderColor")?.cgColor
         
-        header.textLabel?.textColor = theme.colours.primaryTextColor
+        header.textLabel?.textColor = UIColor(named: "primaryTextColor")
         header.textLabel?.font = theme.fonts.forecastHeadlineFont
     }
 }

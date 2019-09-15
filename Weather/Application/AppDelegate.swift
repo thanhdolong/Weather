@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public lazy var homeCoordinator = TodayCoordinator(router: tabBarRouter, container: appDependency.container)
 
     func application(_: UIApplication, willFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        
         appDependency.setupDependencies()
         return true
     }
