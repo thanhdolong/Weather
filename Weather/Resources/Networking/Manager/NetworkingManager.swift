@@ -9,18 +9,18 @@
 import Alamofire
 import PromiseKit
 
-protocol Network: class {
+protocol Networking: class {
     func responseDecodable<T: Decodable>(route: Route, decoder: JSONDecoder) -> Promise<T>
 }
 
-extension Network {
+extension Networking {
     func responseDecodable<T: Decodable>(route: Route) -> Promise<T> {
         return responseDecodable(route: route, decoder: JSONDecoder())
     }
 }
 
 
-final class NetworkManager: Network {
+final class NetworkingManager: Networking {
     func responseDecodable<T>(route: Route, decoder: JSONDecoder) -> Promise<T> where T : Decodable {
         return performResponseDecodable(route: route, decoder: decoder)
     }

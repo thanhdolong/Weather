@@ -14,9 +14,9 @@ protocol WeatherService: class {
 }
 
 final class OpenWeatherService: WeatherService {
-    let networking: Network
+    let networking: Networking
     
-    init(networking: Network) {
+    init(networking: Networking) {
         self.networking = networking
     }
     

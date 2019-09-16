@@ -16,8 +16,8 @@ final class AppDependency {
     }
     
     public func setupDependencies() {
-        container.register(NetworkManager.self) { _ in
-            NetworkManager()
+        container.register(NetworkingManager.self) { _ in
+            NetworkingManager()
         }
         
         container.register(LocationService.self) { _ in
@@ -25,7 +25,7 @@ final class AppDependency {
         }
         
         container.register(OpenWeatherService.self) { resolver in
-            OpenWeatherService(networking: resolver.resolve(NetworkManager.self)!)
+            OpenWeatherService(networking: resolver.resolve(NetworkingManager.self)!)
         }
         
         // ViewControllers
