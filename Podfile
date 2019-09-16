@@ -21,9 +21,4 @@ target 'Weather' do
     pod 'Nimble', '~> 8.0'
   end
 
-  target 'WeatherUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
