@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '12.4'
+platform :ios, '13.0'
 
 target 'Weather' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -11,10 +11,14 @@ target 'Weather' do
   pod 'RealmSwift', '~> 3.17'
   pod "PromiseKit", "~> 6.11"
   pod "PromiseKit/CoreLocation", "~> 6.11"
+  pod 'Quick', '~> 2.2'
+  pod 'Nimble', '~> 8.0'
 
   target 'WeatherTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Quick', '~> 2.2'
+    pod 'Nimble', '~> 8.0'
   end
 
   target 'WeatherUITests' do
