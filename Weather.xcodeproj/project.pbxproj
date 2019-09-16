@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		6F41C15E231D629100B23B2B /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41C15D231D629100B23B2B /* TabBarRouter.swift */; };
 		6F41C161231D645900B23B2B /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41C15F231D645900B23B2B /* ForecastViewController.swift */; };
 		6F41C162231D645900B23B2B /* ForecastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F41C160231D645900B23B2B /* ForecastView.xib */; };
+		6F6C11B5232FFA1200E107E8 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE82CF6231D230000E3308A /* WeatherTests.swift */; };
 		6F7743D723298E780074C80C /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7743D523298E780074C80C /* DefaultTheme.swift */; };
 		6F7743D823298E780074C80C /* ThemeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7743D623298E780074C80C /* ThemeProtocols.swift */; };
 		6F7743DA23298EF50074C80C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7743D923298EF50074C80C /* UIViewController.swift */; };
@@ -39,7 +40,6 @@
 		6FE82CE2231D22FE00E3308A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE82CE1231D22FE00E3308A /* AppDelegate.swift */; };
 		6FE82CE9231D22FF00E3308A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FE82CE8231D22FF00E3308A /* Images.xcassets */; };
 		6FE82CEC231D22FF00E3308A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE82CEA231D22FF00E3308A /* LaunchScreen.storyboard */; };
-		6FE82CF7231D230000E3308A /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE82CF6231D230000E3308A /* WeatherTests.swift */; };
 		6FE82D02231D230000E3308A /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE82D01231D230000E3308A /* WeatherUITests.swift */; };
 		6FE82D28231D2FF500E3308A /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE82D27231D2FF500E3308A /* CurrentWeather.swift */; };
 		6FE82D2D231D338700E3308A /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE82D2C231D338700E3308A /* DailyWeather.swift */; };
@@ -478,6 +478,7 @@
 				6FE82CEE231D22FF00E3308A /* Sources */,
 				6FE82CEF231D22FF00E3308A /* Frameworks */,
 				6FE82CF0231D22FF00E3308A /* Resources */,
+				604FBCFAC04026407EF7FB94 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -606,6 +607,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		604FBCFAC04026407EF7FB94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeatherTests/Pods-WeatherTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeatherTests/Pods-WeatherTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeatherTests/Pods-WeatherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E4E6FCE1A4D8AE09E0998058 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -634,24 +652,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Weather/Pods-Weather-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Weather/Pods-Weather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Weather/Pods-Weather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -724,7 +729,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FE82CF7231D230000E3308A /* WeatherTests.swift in Sources */,
+				6F6C11B5232FFA1200E107E8 /* WeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,7 +926,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 863A0596EE9D53F050D27003 /* Pods-WeatherTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KW278547Y4;
@@ -943,7 +948,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4DD06F8C38E96999F916376 /* Pods-WeatherTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KW278547Y4;

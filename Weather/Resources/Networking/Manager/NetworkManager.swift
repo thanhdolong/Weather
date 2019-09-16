@@ -27,7 +27,6 @@ final class NetworkManager: Network {
 
     @discardableResult
     private func performResponseDecodable<T: Decodable>(route: Route, decoder: JSONDecoder = JSONDecoder()) -> Promise<T> {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
         let result = Promise<T> { seal in
 
@@ -35,7 +34,6 @@ final class NetworkManager: Network {
                                                            decoder: decoder,
                                                            completionHandler: { (response) in
                                                             
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 
                 switch response.result {
                 case .success(let success):
