@@ -65,20 +65,16 @@ class TodayViewController: UIViewController {
         }.catch { (error) in
             switch error {
             case is CLError where (error as? CLError)?.code == .denied:
-                print("Location Error")
                 self.delegate?.todayViewControllerDidReceiveLocationError(self)
             case is CLError where (error as? CLError)?.code == .network:
-                print("Network Error")
                 self.delegate?.todayViewControllerDidReceiveNetworkError(self)
             case is CLLocationManager.PMKError:
                 let error = error as! CLLocationManager.PMKError
                 switch error {
                 case .notAuthorized:
-                    print("Location Error")
                     self.delegate?.todayViewControllerDidReceiveLocationError(self)
                 }
             default:
-                print("Default Error")
                 self.delegate?.todayViewControllerDidReceiveError(self, description: error.localizedDescription)
             }
         }
@@ -92,8 +88,6 @@ class TodayViewController: UIViewController {
             guard let indicator = self.indicator else { return }
             self.removeIndicator(indicator: indicator)
         }.catch { (error) in
-            print("Other Error")
-            print(error)
             self.delegate?.todayViewControllerDidReceiveError(self, description: error.localizedDescription)
         }
     }

@@ -91,23 +91,19 @@ final class ForecastViewController: UIViewController {
         }.catch { (error) in
             switch error {
             case is CLError where (error as? CLError)?.code == .denied:
-                print("Location Error")
                 self.delegate?.forecastViewControllerDidReceiveLocationError(self)
                 
             case is CLError where (error as? CLError)?.code == .network:
-                print("Network error")
                 self.delegate?.forecastViewControllerDidReceiveNetworkError(self)
                 
             case is CLLocationManager.PMKError:
                 let error = error as! CLLocationManager.PMKError
                 switch error {
                 case .notAuthorized:
-                    print("Location Error")
                     self.delegate?.forecastViewControllerDidReceiveLocationError(self)
                 }
                 
             default:
-                print("Default Error")
                 self.delegate?.forecastViewControllerDidReceiveError(self, description: error.localizedDescription)
             }
         }
@@ -124,7 +120,6 @@ final class ForecastViewController: UIViewController {
                 guard let indicator = self.indicator else { return }
                 self.removeIndicator(indicator: indicator)
             }.catch { (error) in
-                print("Other Error")
                 print(error)
                 self.delegate?.forecastViewControllerDidReceiveError(self, description: error.localizedDescription)
         }
