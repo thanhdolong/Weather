@@ -32,6 +32,7 @@
 		6F7743DD232995C50074C80C /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FE82D2E231D3C3F00E3308A /* Montserrat-Light.ttf */; };
 		6F7743DE232995C80074C80C /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FE82D2F231D3C3F00E3308A /* Montserrat-Medium.ttf */; };
 		6F7743DF232995CB0074C80C /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FE82D30231D3C3F00E3308A /* Montserrat-SemiBold.ttf */; };
+		6F9ED3C62330D7DC00030E9C /* OpenWeatherMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F9ED3C52330D7DC00030E9C /* OpenWeatherMap.plist */; };
 		6FAAB8D2232655D800712A24 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAAB8D1232655D800712A24 /* AppDependency.swift */; };
 		6FE0724123269E610047EF9B /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE0724023269E610047EF9B /* LocationService.swift */; };
 		6FE072442329463C0047EF9B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE072422329463C0047EF9B /* TodayViewController.swift */; };
@@ -84,6 +85,7 @@
 		6F7743D523298E780074C80C /* DefaultTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		6F7743D623298E780074C80C /* ThemeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeProtocols.swift; sourceTree = "<group>"; };
 		6F7743D923298EF50074C80C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		6F9ED3C52330D7DC00030E9C /* OpenWeatherMap.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = OpenWeatherMap.plist; sourceTree = "<group>"; };
 		6FAAB8D1232655D800712A24 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		6FAF0843892ACB10C595388C /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		6FE0724023269E610047EF9B /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				6FE82CE8231D22FF00E3308A /* Images.xcassets */,
 				6FE82CED231D22FF00E3308A /* Info.plist */,
+				6F9ED3C52330D7DC00030E9C /* OpenWeatherMap.plist */,
 				6FE82D14231D23D900E3308A /* Fonts */,
 				6FFC27A42320FB3C00C9BCFC /* Networking */,
 				6FE82D15231D23E400E3308A /* Storyboards */,
@@ -505,6 +508,7 @@
 				6F41C162231D645900B23B2B /* ForecastView.xib in Resources */,
 				6F7743DF232995CB0074C80C /* Montserrat-SemiBold.ttf in Resources */,
 				6F1D1F1A232AA1DC0007D42A /* DailyWeatherTableViewCell.xib in Resources */,
+				6F9ED3C62330D7DC00030E9C /* OpenWeatherMap.plist in Resources */,
 				6FE072452329463C0047EF9B /* TodayView.xib in Resources */,
 				6F7743DE232995C80074C80C /* Montserrat-Medium.ttf in Resources */,
 				6FE82CE9231D22FF00E3308A /* Images.xcassets in Resources */,

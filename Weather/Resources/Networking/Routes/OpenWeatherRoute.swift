@@ -40,6 +40,12 @@ extension OpenWeatherRoute: Route {
         }
     }
     
+    var apiKey: String {
+        let file = Bundle.main.path(forResource: "OpenWeatherMap", ofType: "plist")!
+        let dictionary = NSDictionary(contentsOfFile: file)!
+        return dictionary["key"] as! String
+    }
+    
     var parameters: Parameters? {
         switch self {
         case .currentWeather(let lat, let lng):
@@ -47,14 +53,14 @@ extension OpenWeatherRoute: Route {
                 "lat": lat,
                 "lon": lng,
                 "units": "metric",
-                "appid": "7823f667f5f356e0d6e680998463907d"
+                "appid": apiKey
             ]
         case .forecast(let lat, let lng):
             return [
                 "lat": lat,
                 "lon": lng,
                 "units": "metric",
-                "appid": "7823f667f5f356e0d6e680998463907d"
+                "appid": apiKey
             ]
         }
     }
