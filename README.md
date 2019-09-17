@@ -4,7 +4,7 @@
 
 ![Screebshots](https://i.imgur.com/I59mpES.png)
 
-# ✍️ About
+## ✍️ About
 A simple weather app, that provides current weather information from current location, as well 5 day forecas. Weather uses the OpenWeatherMap api to download weather data. Whole app support both portrait and landscape UI orientations as well as support for all iOS-related size classes (iPhone & iPad) and dark mode appearance. 
 
 ## 🏗  Usage
@@ -15,4 +15,4 @@ pod update
 ```
 ## 👨‍💻 Author
 
-Thanh Do Long, thanh.dolong@gmail.com
+Thành Đỗ Long, thanh.dolong@gmail.com
