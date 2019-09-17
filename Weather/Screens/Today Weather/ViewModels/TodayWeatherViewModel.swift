@@ -10,9 +10,11 @@ import UIKit
 import CoreLocation
 
 public class TodayWeatherViewModel {
+    // MARK: - Instance Properties
     private let place: CLPlacemark
     private let weather: CurrentWeather
     
+    // MARK: - Object Lifecycle
     init(place: CLPlacemark, weather: CurrentWeather) {
         self.place = place
         self.weather = weather

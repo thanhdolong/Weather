@@ -17,6 +17,7 @@ class LocationService {
     let geocoder: CLGeocoder
     weak var delegate: LocationServiceDelegate?
     
+    // MARK: - Object Lifecycle
     init(geocoder: CLGeocoder = .init()) {
         self.geocoder = geocoder
     }

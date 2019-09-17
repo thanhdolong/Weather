@@ -17,6 +17,7 @@ protocol ForecastViewControllerDelegate: class {
 }
 
 final class ForecastViewController: UIViewController {
+    // MARK: - Instance Properties
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
@@ -41,6 +42,7 @@ final class ForecastViewController: UIViewController {
         return (view as! ForecastView)
     }
     
+    // MARK: - Object Lifecycle
     init(locationService: LocationService, weatherService: WeatherService) {
         self.locationService = locationService
         self.weatherService = weatherService

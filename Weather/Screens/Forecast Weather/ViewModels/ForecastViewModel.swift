@@ -10,10 +10,11 @@ import UIKit
 import CoreLocation
 
 public class ForecastViewModel {
-    
+    // MARK: - Instance Properties
     private let place: CLPlacemark
     private var forecast: [DateComponents: [DailyWeather]]
     
+    // MARK: - Object Lifecycle
     init(place: CLPlacemark, forecast: [DailyWeather]) {
         self.place = place
         

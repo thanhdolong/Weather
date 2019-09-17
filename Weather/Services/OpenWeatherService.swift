@@ -16,6 +16,7 @@ protocol WeatherService: class {
 final class OpenWeatherService: WeatherService {
     let networking: Networking
     
+    // MARK: - Object Lifecycle
     init(networking: Networking) {
         self.networking = networking
     }

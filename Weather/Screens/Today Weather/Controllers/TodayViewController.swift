@@ -18,6 +18,7 @@ protocol TodayViewControllerDelegate: class {
 }
 
 class TodayViewController: UIViewController {
+    // MARK: - Instance Properties
     private let weatherService: WeatherService
     private let locationService: LocationService
     
@@ -32,6 +33,7 @@ class TodayViewController: UIViewController {
         return (view as! TodayView)
     }
     
+    // MARK: - Object Lifecycle
     init(locationService: LocationService, weatherService: WeatherService) {
         self.locationService = locationService
         self.weatherService = weatherService
