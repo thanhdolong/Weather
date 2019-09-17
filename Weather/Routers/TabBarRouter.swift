@@ -35,7 +35,7 @@ public class TabBarRouter: NSObject, Router {
     }
     
     // MARK: - Router
-    public func present(_ viewController: UIViewController, animated: Bool, onDismissed: (()->Void)?) {
+    public func present(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {
         if tabBarController.viewControllers == nil {
             tabBarController.viewControllers = [viewController]
         } else {
@@ -47,4 +47,3 @@ public class TabBarRouter: NSObject, Router {
         // don't do anything
     }
 }
-

@@ -33,7 +33,6 @@ extension ForecastView: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         view.tintColor = UIColor(named: "backgroundColor")
-
         
         let header = view as! UITableViewHeaderFooterView
         header.layer.borderWidth = 1

@@ -9,9 +9,9 @@
 import UIKit
 
 public class TodayView: UIView {
-    @IBOutlet weak var navigationBar: UINavigationBar!  {
+    @IBOutlet weak var navigationBar: UINavigationBar! {
         didSet {
-            let attrs: [NSAttributedString.Key : Any] = [
+            let attrs: [NSAttributedString.Key: Any] = [
                 .foregroundColor: UIColor(named: "primaryTextColor")!,
                 .font: theme.fonts.navigationBarFont
             ]

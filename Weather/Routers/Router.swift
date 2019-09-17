@@ -8,7 +8,7 @@ public protocol Router: class {
     func present(_ viewController: UIViewController, animated: Bool)
     func present(_ viewController: UIViewController,
                  animated: Bool,
-                 onDismissed: (()->Void)?)
+                 onDismissed: (() -> Void)?)
     func dismiss(animated: Bool)
 }
 

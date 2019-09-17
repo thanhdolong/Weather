@@ -19,9 +19,8 @@ extension Networking {
     }
 }
 
-
 final class NetworkingManager: Networking {
-    func responseDecodable<T>(route: Route, decoder: JSONDecoder) -> Promise<T> where T : Decodable {
+    func responseDecodable<T>(route: Route, decoder: JSONDecoder) -> Promise<T> where T: Decodable {
         return performResponseDecodable(route: route, decoder: decoder)
     }
 
@@ -33,7 +32,6 @@ final class NetworkingManager: Networking {
             AF.request(route).validate().responseDecodable(of: T.self,
                                                            decoder: decoder,
                                                            completionHandler: { (response) in
-                                                            
                 
                 switch response.result {
                 case .success(let success):

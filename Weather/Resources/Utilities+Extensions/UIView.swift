@@ -10,8 +10,6 @@ import UIKit
 
 extension UIView {
     var theme: ThemeStrategy {
-        get {
-            return DefaultTheme()
-        }
+        return DefaultTheme()
     }
 }

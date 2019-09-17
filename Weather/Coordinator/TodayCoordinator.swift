@@ -49,16 +49,8 @@ extension TodayCoordinator: TodayViewControllerDelegate {
     
     func todayViewControllerDidPressShareButton(_ viewController: TodayViewController, text description: String?) {
         let activityViewController = UIActivityViewController(activityItems: [description ?? ""] , applicationActivities: nil)
-        
-//        if let popoverController = activityViewController.popoverPresentationController {
-//            popoverController.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
-//            popoverController.sourceView = viewController.view
-//            popoverController.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
-//        }
-        
         activityViewController.popoverPresentationController?.sourceView = viewController.view
 
-        
         viewController.present(activityViewController, animated: true, completion: nil)
     }
 }

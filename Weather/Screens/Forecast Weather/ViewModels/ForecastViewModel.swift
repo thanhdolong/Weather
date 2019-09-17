@@ -12,7 +12,7 @@ import CoreLocation
 public class ForecastViewModel {
     
     private let place: CLPlacemark
-    private var forecast: [DateComponents : [DailyWeather]]
+    private var forecast: [DateComponents: [DailyWeather]]
     
     init(place: CLPlacemark, forecast: [DailyWeather]) {
         self.place = place
@@ -92,4 +92,3 @@ extension ForecastViewModel {
         view.temperatureLabel.text = "\(String(format: "%.0f", weather.temperature)) °"
     }
 }
-

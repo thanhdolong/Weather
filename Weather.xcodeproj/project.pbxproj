@@ -426,6 +426,7 @@
 				6FE82CDB231D22FE00E3308A /* Frameworks */,
 				6FE82CDC231D22FE00E3308A /* Resources */,
 				F2CCCECB6219C626382ECAF3 /* [CP] Embed Pods Frameworks */,
+				6F3F24C323307910002F7903 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -558,6 +559,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeatherTests/Pods-WeatherTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6F3F24C323307910002F7903 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		E4E6FCE1A4D8AE09E0998058 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

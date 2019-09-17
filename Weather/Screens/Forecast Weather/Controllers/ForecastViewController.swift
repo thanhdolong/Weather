@@ -16,7 +16,6 @@ protocol ForecastViewControllerDelegate: class {
     func forecastViewControllerDidReceiveError(_ viewController: ForecastViewController, description: String)
 }
 
-
 final class ForecastViewController: UIViewController {
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()

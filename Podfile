@@ -13,6 +13,7 @@ target 'Weather' do
   pod "PromiseKit/CoreLocation", "~> 6.11"
   pod 'Quick', '~> 2.2'
   pod 'Nimble', '~> 8.0'
+  pod 'SwiftLint', '~> 0.35'
 
   target 'WeatherTests' do
     inherit! :search_paths

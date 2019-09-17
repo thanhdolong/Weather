@@ -11,9 +11,9 @@ import UIKit
 // MARK: Alert Extensions
 extension UIViewController {
     func presentAlertAction(withTitle title: String?,
-                   message: String?,
-                   alertActions: [UIAlertAction]? = nil,
-                   handler: ((UIAlertAction) -> Void)? = nil) {
+                            message: String?,
+                            alertActions: [UIAlertAction]? = nil,
+                            handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         if let alertActions = alertActions {
@@ -36,7 +36,6 @@ extension UIViewController {
         let boxView = UIView(frame: CGRect(x: (view.center.x - 40), y: (view.center.y - 40) + offset, width: 80, height: 80))
         boxView.backgroundColor = UIColor.gray
         boxView.layer.cornerRadius = 10
-        
         
         let spinnerView = UIView.init(frame: onView.bounds)
         spinnerView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
