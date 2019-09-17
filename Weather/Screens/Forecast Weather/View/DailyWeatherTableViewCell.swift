@@ -15,19 +15,7 @@ public protocol WeatherCell: class {
     var temperatureLabel: UILabel! { get }
 }
 
-class DailyWeatherTableViewCell: UITableViewCell, WeatherCell ,ReusableView {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+class DailyWeatherTableViewCell: UITableViewCell, WeatherCell ,ReusableView {    
     @IBOutlet weak var weatherIconImage: UIImageView!
     
     @IBOutlet weak var timeLabel: UILabel! {

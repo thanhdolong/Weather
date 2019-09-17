@@ -53,6 +53,7 @@ class TodayViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
     @IBAction func shareButtonTapped(_ sender: Any) {
         delegate?.todayViewControllerDidPressShareButton(self, text: viewModel?.description ?? "")
     }

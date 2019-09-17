@@ -40,5 +40,10 @@ extension ForecastView: UITableViewDelegate {
         
         header.textLabel?.textColor = UIColor(named: "primaryTextColor")
         header.textLabel?.font = theme.fonts.forecastHeadlineFont
+        header.fadeTransition()
+    }
+    
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.fadeTransition(delay: 0.05 * Double(indexPath.row), duration: 0.5)
     }
 }
