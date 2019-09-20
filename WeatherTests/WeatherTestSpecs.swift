@@ -29,13 +29,13 @@ class WeatherTestsSpecs: QuickSpec {
             
             container = Container()
             container.register(Networking.self) { _ in NetworkingManager() }
-            container.register(OpenWeatherService.self) { resolver in OpenWeatherService(networking: resolver.resolve(Networking.self)!)}
+            container.register(WeatherService.self) { resolver in OpenWeatherServiceImpl(networking: resolver.resolve(Networking.self)!)}
         }
         
         describe("Weather service") {
             context("when request current weather") {
                 it("should return data") {
-                    let fetcher = container.resolve(OpenWeatherService.self)!
+                    let fetcher = container.resolve(WeatherService.self)!
                     
                     fetcher.getCurrentWeatherForecast(location: placemark).catch { (error) in
                         switch error {
@@ -50,7 +50,7 @@ class WeatherTestsSpecs: QuickSpec {
             
             context("when request weekly weather") {
                 it("should return data") {
-                    let fetcher = container.resolve(OpenWeatherService.self)!
+                    let fetcher = container.resolve(WeatherService.self)!
                     
                     fetcher.getWeeklyWeatherForecast(location: placemark).catch { (error) in
                         switch error {

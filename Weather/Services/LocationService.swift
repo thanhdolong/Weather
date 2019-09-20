@@ -13,7 +13,11 @@ protocol LocationServiceDelegate: class {
     func openWeatherServiceDidReceivedNetworkError(_ viewController: UIViewController)
 }
 
-class LocationService {
+protocol LocationService: class {
+    func getLocation() -> Promise<CLPlacemark>
+}
+
+class LocationServiceImpl: LocationService {
     let geocoder: CLGeocoder
     weak var delegate: LocationServiceDelegate?
     

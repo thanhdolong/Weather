@@ -13,7 +13,7 @@ protocol WeatherService: class {
     func getWeeklyWeatherForecast(location: CLPlacemark) -> Promise<[DailyWeather]>
 }
 
-final class OpenWeatherService: WeatherService {
+final class OpenWeatherServiceImpl: WeatherService {
     let networking: Networking
     
     // MARK: - Object Lifecycle
