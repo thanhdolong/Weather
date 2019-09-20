@@ -20,8 +20,8 @@ final class ForecastViewController: UIViewController {
     // MARK: - Instance Properties
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action:
-            #selector(refresh(_:)),
+        refreshControl.addTarget(self,
+                                 action: #selector(refresh(_:)),
                                  for: UIControl.Event.valueChanged)
 
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Weather")
@@ -141,7 +141,9 @@ extension ForecastViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = forecastView.tableView.dequeueReusableCell(withIdentifier: DailyWeatherTableViewCell.reuseIdentifier, for: indexPath) as? DailyWeatherTableViewCell else { return self.tableView(tableView, cellForRowAt: indexPath); }
+        guard let cell = forecastView.tableView.dequeueReusableCell(withIdentifier: DailyWeatherTableViewCell.reuseIdentifier, for: indexPath) as? DailyWeatherTableViewCell else {
+            return self.tableView(tableView, cellForRowAt: indexPath)
+        }
         
         viewModel?.configureDailyWeatherCell(cell, for: indexPath)
         cell.selectionStyle = .none

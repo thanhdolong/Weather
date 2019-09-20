@@ -15,7 +15,7 @@ public protocol WeatherCell: class {
     var temperatureLabel: UILabel! { get }
 }
 
-class DailyWeatherTableViewCell: UITableViewCell, WeatherCell ,ReusableView {    
+class DailyWeatherTableViewCell: UITableViewCell, WeatherCell, ReusableView {    
     @IBOutlet weak var weatherIconImage: UIImageView!
     
     @IBOutlet weak var timeLabel: UILabel! {

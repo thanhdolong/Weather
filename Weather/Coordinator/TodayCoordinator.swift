@@ -48,7 +48,7 @@ extension TodayCoordinator: TodayViewControllerDelegate {
     }
     
     func todayViewControllerDidPressShareButton(_ viewController: TodayViewController, text description: String?) {
-        let activityViewController = UIActivityViewController(activityItems: [description ?? ""] , applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [description ?? ""], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = viewController.view
 
         viewController.present(activityViewController, animated: true, completion: nil)
